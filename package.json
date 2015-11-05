@@ -1,7 +1,7 @@
 {
   "name": "aimee",
   "aimee": "app",
-  "description": "Web前端开发框架",
+  "description": "Aimee框架",
   "main": "aimee.js",
   "version": "1.0.0",
   "scripts": {
@@ -26,6 +26,9 @@
       "class": "*",
       "pm": "*",
       "page": "*",
-      "app": "*"
+      "app": "*",
+      "guid": "*",
+      "router": "*",
+      "config": "*"
   }
 }
