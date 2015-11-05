@@ -3,12 +3,12 @@
 ##官方模块
 UZ构建工具定制化模块，所以最好配合UZ使用  
 所有模块形式和nodejs模块相同，类CMD，包装define外壳后可以使用seajs调用  
-[Aimee-class](https://github.com/gavinning/aimee-class)  
-[Aimee-pm](https://github.com/gavinning/aimee-pm)  
-[Aimee-page](https://github.com/gavinning/aimee-page)  
-[Aimee-app](https://github.com/gavinning/aimee-app)  
-[Aimee-is](https://github.com/gavinning/aimee-is)  
-[Aimee-extend](https://github.com/gavinning/aimee-extend)
+[class](https://github.com/Aimeejs/class)  
+[pm](https://github.com/Aimeejs/pm)  
+[page](https://github.com/Aimeejs/page)  
+[app](https://github.com/Aimeejs/app)  
+[is](https://github.com/Aimeejs/is)  
+[extend](https://github.com/Aimeejs/extend)
 
 ##项目
 ####项目开发目录
@@ -68,9 +68,9 @@ dest
 ```
 
 
-####Widget-app开发
-[Aimee-app](https://github.com/gavinning/aimee-app)  
+####Widget开发
+[app](https://github.com/Aimeejs/app)  
 
 
 ####虚拟页开发
-[Aimee-page](https://github.com/gavinning/aimee-page)  
+[page](https://github.com/Aimeejs/page)  
