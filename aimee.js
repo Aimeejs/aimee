@@ -15,6 +15,8 @@ aimee.extend = require('extend');
 aimee.config = require('config');
 aimee.router = require('router');
 aimee.Class = require('class');
+// 存储全局app模块
+aimee.app = {};
 
 // 注册全局Widget-app模块
 aimee.reg = function(name, id){
@@ -55,8 +57,8 @@ aimee.reg = function(name, id){
         app.init().appendTo('body');
     }
 
-    // 注册到PM
-    pm.app[name] = app;
+    // 注册到aimee.app
+    aimee.app[name] = app;
 
     return this;
 }
