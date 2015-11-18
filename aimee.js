@@ -8,7 +8,7 @@ var aimee = {};
 var config = {};
 
 aimee.name = 'aimee';
-aimee.version = '1.0.0';
+aimee.version = '1.0.2';
 aimee.is = require('is');
 aimee.guid = require('guid');
 aimee.extend = require('extend');
@@ -17,6 +17,15 @@ aimee.router = require('router');
 aimee.Class = require('class');
 // 存储全局app模块
 aimee.app = {};
+// 存储全局虚拟模块
+aimee.virtualMap = {};
+
+// 定义虚拟app
+aimee.define = function(id, fn){
+    var app = fn();
+    app.fn.name = id;
+    aimee.virtualMap[id] = app;
+}
 
 // 注册全局Widget-app模块
 aimee.reg = function(name, id){
