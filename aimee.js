@@ -97,4 +97,4 @@ aimee.getConfig = function(){
     return aimee.config.get();
 }
 
-module.exports = aimee;
+module.exports = window.aimee = aimee;
