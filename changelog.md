@@ -1,5 +1,14 @@
 #更新历史
 
+v1.0.4
+---
+优化```aimee.reg```方法，全局模块默认插入全局容器```.lincowebapp-wrapper```，```.lincowebapp-wrapper```为空时插入```body```   
+fix bug: 修复因app api升级造成的bug
+
+v1.0.3
+---
+开放```aimee```对象为全局变量
+
 v1.0.2
 ---
 * 新增定义虚拟app方法 ```aimee.define```

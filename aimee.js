@@ -59,11 +59,14 @@ aimee.reg = function(name, id){
     // 检查是否存在相应规则的占位符
     // 没有占位符则默认插入到body
     else{
+        var wrapper = $('.lincowebapp-wrapper');
         var stringId = aimee.config.get('app.renderString') + name;
         var isExist = !!document.querySelector(stringId);
         isExist ?
             app.init().render(stringId):
-        app.init().appendTo('body');
+            wrapper.length ?
+                app.init().compile().appendTo(wrapper):
+                app.init().compile().appendTo('body');
     }
 
     // 注册到aimee.app
