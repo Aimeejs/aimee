@@ -3,7 +3,7 @@
   "aimee": "app",
   "description": "Aimee框架",
   "main": "aimee.js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scripts": {
     "test": "aimee -v"
   },
@@ -21,14 +21,14 @@
   },
   "homepage": "https://github.com/Aimeejs/aimee",
   "dependencies": {
-      "is": "*",
-      "extend": "*",
-      "class": "*",
-      "pm": "*",
-      "page": "*",
-      "app": "*",
-      "guid": "*",
-      "router": "*",
-      "config": "*"
+      "is": "^1.0.0",
+      "extend": "^1.0.0",
+      "class": "^1.0.0",
+      "pm": "^1.0.0",
+      "page": "^1.0.0",
+      "app": "^1.0.0",
+      "guid": "^1.0.0",
+      "router": "^1.0.0",
+      "config": "^1.0.0"
   }
 }

@@ -1,35 +1,26 @@
 #Aimee
+开发框架  
+App开发 [app](http://aimee.ilinco.com/static/sage/?name=app&version=last#/app)  
+虚拟页开发 [page](http://aimee.ilinco.com/static/sage/?name=page&version=last#/app)  
+路由注册 [router](http://aimee.ilinco.com/static/sage/?name=router&version=last#/app)  
 
-##官方模块
-UZ构建工具定制化模块，所以最好配合UZ使用  
-所有模块形式和nodejs模块相同，类CMD，包装define外壳后可以使用seajs调用  
-[class](https://github.com/Aimeejs/class)  
-[pm](https://github.com/Aimeejs/pm)  
-[page](https://github.com/Aimeejs/page)  
-[app](https://github.com/Aimeejs/app)  
-[is](https://github.com/Aimeejs/is)  
-[extend](https://github.com/Aimeejs/extend)
-
-##项目
-####项目开发目录
+#### Aimee框架目录规范
 ```
 project                           // 项目目录
 ├── css
+│   ├── base.less                 // Less Mixin
 │   ├── common.less               // 公共样式
-│   ├── inc                       // 与业务有关的样式模块，不被构建工具处理
-│   └── lib                       // 与业务无关的样式模块，不被构建工具处理
+│   └── lib                       // 此目录不被构建工具处理
 ├── images                        // 图片文件夹最终位置，构建工具会将模块图片发布到这个位置
 │   └── img                       // 用于占位的图片位置
 │   ├── app                       // 构建工具将会按照模块名称将其图片发布到images目录下，开发者可忽略
 │   │   └── img
-├── js                            // js位置，够将
+├── index.html                    // 入口文件
+├── js                            // js位置
 │   └── dev                       // 不上线的js文件，仅用于开发环境，构建工具将会忽略
 │   └── lib                       // js库文件位置
 │   └── pkg                       // 构建工具发布打包后js文件的位置
-├── packages                      // 包管理工具安装目录，待定
-├── modules                       // 纯js模块
-│   └── app
-│       └── app.js
+├── modules                       // 包管理工具安装目录
 ├── pages                         // 页面
 │   └── init.js                   // 页面入口js文件，require('init')
 │   └── home
@@ -40,14 +31,14 @@ project                           // 项目目录
     └── header                    // Widget Ui模块
         ├── header.jade           // Widget模板文件
         ├── header.js             // Widget js文件
-        ├── header.json.js        // Widget模拟数据，仅用于开发环境
+        ├── header.json.js        // Widget模拟数据
         ├── header.less           // Widget样式文件
         └── img                   // Widget图片文件夹
 
 ```
 
 <a name="a42"/>
-####项目产出目录
+#### Aimee项目经过UZ构建之后的产出目录
 
 ```
 dest
@@ -57,20 +48,17 @@ dest
 │   ├── app
 │   │   └── img
 │   └── img
-├── index.html                      // 入口HTML文件
+├── index.html                      // 入口文件
 ├── js                              // 最终js存放目录
-│   └── pkg                         // 打包js存放目录
-│       ├── json.js                 // 模拟数据，仅用于测试
-│       ├── lib.js                  // 库文件
-│       ├── mods.js                 // 纯js模块
-│       ├── page.js                 // widget && pages
-│       └── templates.js            // HTML模板
+│   └── pkg                         // 打包js存放目录，打包规则可以自定义
 ```
 
-
-####Widget开发
-[app](https://github.com/Aimeejs/app)  
-
-
-####虚拟页开发
-[page](https://github.com/Aimeejs/page)  
+#### Aimee全局模块注册
+```js
+// In init.js
+aimee
+    .reg('zepto')
+    .reg('loading')
+    .reg('autoscreen')
+    .reg('header' [, data])
+```
