@@ -25,7 +25,7 @@ aimee.virtualMap = {};
 aimee.create = emmet;
 // 包装为Zepto对象
 aimee.$ = function(string){
-    return $(create(string))
+    return $(this.create(string))
 }
 
 // 定义虚拟app
