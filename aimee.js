@@ -6,9 +6,10 @@
 
 var aimee = {};
 var config = {};
+var emmet = require('emmet');
 
 aimee.name = 'aimee';
-aimee.version = '1.0.2';
+aimee.version = '1.1.0';
 aimee.is = require('is');
 aimee.guid = require('guid');
 aimee.extend = require('extend');
@@ -19,6 +20,13 @@ aimee.Class = require('class');
 aimee.app = {};
 // 存储全局虚拟模块
 aimee.virtualMap = {};
+
+// 使用emmet的方式创建dom
+aimee.create = emmet;
+// 包装为Zepto对象
+aimee.$ = function(string){
+    return $(create(string))
+}
 
 // 定义虚拟app
 aimee.define = function(id, fn){

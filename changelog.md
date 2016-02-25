@@ -1,4 +1,29 @@
 #更新历史
+
+v1.1.0
+---
+* 新增``aimee.$``
+* 新增``aimee.create``
+
+``aimee.$``和``aimee.create``支持采用[emmet](https://github.com/Aimeejs/emmet)的方式创建dom  
+``aimee.$``输出jQuery或Zepto对象，``type: Zepto | jQuery``  
+``aimee.create``输出原生dom结构，``type: String``  
+
+```js
+$('body').append(aimee.$('.wrapper>p{123}'))
+// or
+$('body').append(aimee.create('.wrapper>p{123}'))
+```
+===>
+```html
+<body>
+    <div class="wrapper">
+        <p>123</p>
+    </div>
+</body>
+```
+
+
 v1.0.5
 ---
 * 优化依赖
