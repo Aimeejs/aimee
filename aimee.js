@@ -36,19 +36,30 @@ aimee.define = function(id, fn){
 }
 
 // 注册全局Widget-app模块
-aimee.reg = function(name, id){
+aimee.reg = function(id, data, fn){
     var app, App;
     var pm = require('pm');
     var place = aimee.config.get('app.place');
 
-    if(!id){
-        id = name;
+    fn = fn || function(){};
+
+    // this.reg(name, fn)
+    if($.isFunction(data)){
+        fn = data;
+        data = null;
     }
 
-    // 检查id是否为Widget-app
-    typeof id === 'string' ?
-        App = require(id):
-        App = id;
+    try{
+        App = require(id)
+    }
+    catch(e){
+        if(aimee.virtualMap[id]){
+            App = App = aimee.virtualMap[id]
+        }
+        else{
+            return this
+        }
+    }
 
     // 检查App是否是widget-app
     // eg: autoscreen
@@ -60,25 +71,33 @@ aimee.reg = function(name, id){
     app = new App;
 
     // 查找是否已注册占位符
-    if(place[name]){
-        app.init().render(place[name])
+    if(place[id]){
+        app.init(data).render(place[id])
     }
 
     // 检查是否存在相应规则的占位符
     // 没有占位符则默认插入到body
     else{
         var wrapper = $('.lincowebapp-wrapper');
-        var stringId = aimee.config.get('app.renderString') + name;
+        var stringId = aimee.config.get('app.renderString') + id;
         var isExist = !!document.querySelector(stringId);
         isExist ?
-            app.init().render(stringId):
+            app.init(data).render(stringId):
             wrapper.length ?
-                app.init().compile().appendTo(wrapper):
-                app.init().compile().appendTo('body');
+                app.init(data).compile().appendTo(wrapper):
+                app.init(data).compile().appendTo('body');
     }
 
+    // 全局模块默认隐藏
+    app.hide()
+
     // 注册到aimee.app
-    aimee.app[name] = app;
+    if(aimee.app[id] && data && data.id){
+        aimee.app[data.id] = app
+    }
+    else{
+        aimee.app[id] = app;
+    }
 
     return this;
 }
