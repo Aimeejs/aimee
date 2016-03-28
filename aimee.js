@@ -44,7 +44,7 @@ aimee.reg = function(id, data, fn){
     fn = fn || function(){};
 
     // this.reg(name, fn)
-    if($.isFunction(data)){
+    if(typeof data === 'function'){
         fn = data;
         data = null;
     }
