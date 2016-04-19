@@ -5,27 +5,22 @@
  */
 
 var aimee = {};
-var config = {};
-var emmet = require('emmet');
-
 aimee.name = 'aimee';
-aimee.version = '1.1.0';
 aimee.is = require('is');
 aimee.guid = require('guid');
 aimee.extend = require('extend');
 aimee.config = require('config');
 aimee.router = require('router');
+aimee.create = require('emmet');
 aimee.Class = require('class');
 // 存储全局app模块
 aimee.app = {};
 // 存储全局虚拟模块
 aimee.virtualMap = {};
 
-// 使用emmet的方式创建dom
-aimee.create = emmet;
 // 包装为Zepto对象
 aimee.$ = function(string){
-    return $(this.create(string))
+    return $(aimee.create(string))
 }
 
 // 定义虚拟app
