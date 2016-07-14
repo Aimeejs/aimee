@@ -5,14 +5,16 @@
  */
 
 var aimee = {};
+var Config = require('config').Config;
+
 aimee.name = 'aimee';
 aimee.is = require('is');
 aimee.guid = require('guid');
 aimee.extend = require('extend');
-aimee.config = require('config');
 aimee.router = require('router');
 aimee.create = require('emmet');
 aimee.Class = require('class');
+
 // 存储全局app模块
 aimee.app = {};
 // 存储全局虚拟模块
