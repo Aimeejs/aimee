@@ -14,6 +14,7 @@ aimee.extend = require('extend');
 aimee.router = require('router');
 aimee.create = require('emmet');
 aimee.Class = require('class');
+aimee.config = new Config;
 
 // 存储全局app模块
 aimee.app = {};
