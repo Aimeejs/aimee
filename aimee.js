@@ -38,6 +38,10 @@ class Aimee extends Base {
         })
     }
 
+    $(string) {
+        return $(aimee.create(string))
+    }
+
     define(id, fn) {
         var app = fn();
         app.fn.name = id;
@@ -115,4 +119,5 @@ class Aimee extends Base {
     }
 }
 
-export default new Aimee;
+let aimee = window.aimee = new Aimee;
+export default aimee;
