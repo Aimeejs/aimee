@@ -3,7 +3,7 @@
   "aimee": "app",
   "description": "Aimee框架",
   "main": "aimee.js",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
     "test": "aimee -v"
   },
@@ -23,13 +23,13 @@
   "dependencies": {
       "is": "^1.0.0",
       "extend": "^1.0.0",
-      "class": "^1.0.0",
+      "class": "^2.0.0",
       "pm": "^2.0.0",
       "app": "^2.0.0",
       "page": "^2.0.0",
       "guid": "^1.0.0",
-      "router": "^1.0.0",
-      "config": "^1.0.0",
+      "router": "^2.0.0",
+      "config": "^2.0.0",
       "emmet": "^1.0.0"
   }
 }

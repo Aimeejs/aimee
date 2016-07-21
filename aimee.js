@@ -66,7 +66,7 @@ class Aimee extends Base {
         }
         catch(e){
             if(aimee.virtualMap[id]){
-                App = App = aimee.virtualMap[id]
+                App = aimee.virtualMap[id]
             }
             else{
                 return this
@@ -76,6 +76,8 @@ class Aimee extends Base {
         // 检查App是否是widget-app
         // eg: autoscreen
         if(!App.aimee){
+            // 加载非widget-app
+            App ? aimee.app[id] = App : App;
             return this;
         }
 

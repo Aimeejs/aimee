@@ -1,5 +1,15 @@
 #更新历史
 
+v2.0.1
+---
+Fixbug 修正注册后不能正确挂载非``widget-app``的问题
+
+v2.0.0
+---
+* ES6语法重构
+* 修正在aimee.app中使用Zepto框架的问题
+* Fixbug 修正aimee.config没有正确实例化的问题
+
 v1.1.0
 ---
 * 新增``aimee.$``
