@@ -98,8 +98,8 @@ class Aimee extends Base {
             isExist ?
                 app.init(data).render(stringId):
                 wrapper.length ?
-                    app.init(data).compile().appendTo(wrapper):
-                    app.init(data).compile().appendTo('body');
+                    app.init(data).render().appendTo(wrapper):
+                    app.init(data).render().appendTo('body');
         }
 
         // 全局模块默认隐藏

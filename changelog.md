@@ -1,5 +1,9 @@
 #更新历史
 
+v2.0.2
+---
+Fixbug 修正全局注册app不能正确响应app.prerender, app.postrender的问题
+
 v2.0.1
 ---
 Fixbug 修正注册后不能正确挂载非``widget-app``的问题
